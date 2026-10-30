@@ -3,3 +3,30 @@
 
 /etcd_data/*
 !/etcd_data/.keep
+
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+apisix-new-keys.txt
+
+# Backup files
+*.bak
+
+# Local secrets
+secrets/
+
+# Secrets
+.env
+.env.*
+!.env.example
+apisix-new-keys.txt
+*.bak
+
+
+apisix_conf/config.yaml
+
+
+.env
+.env.*
+!.env.example

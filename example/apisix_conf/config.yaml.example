@@ -1,0 +1,38 @@
+
+apisix:
+  node_listen: 9080
+  enable_ipv6: false
+
+  enable_control: true
+  control:
+    ip: "0.0.0.0"
+    port: 9092
+
+deployment:
+  admin:
+    allow_admin:
+      - 127.0.0.1/32
+      - 172.18.0.1/32
+
+    admin_key:
+      - name: "admin"
+        key: "REPLACE_WITH_ADMIN_KEY"
+        role: admin
+
+      - name: "viewer"
+        key: "REPLACE_WITH_VIEWER_KEY"
+        role: viewer
+
+  etcd:
+    host:
+      - "http://etcd:2379"
+    user: "root"
+    password: "REPLACE_WITH_ETCD_PASSWORD"
+    prefix: "/apisix"
+    timeout: 30
+
+plugin_attr:
+  prometheus:
+    export_addr:
+      ip: "0.0.0.0"
+      port: 9091
